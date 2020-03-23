@@ -14,4 +14,8 @@ db.sport.updateMany({requiredTeams:true}, {$inc:{minimumJoueurs : 10}})
 
 db.sport.updateMany({}, {$push : {title :[]}}, {upsert : true})
 
-db.sport.updateMany({requiredTeams : true}, {$push : {title :[]}}, {upsert : true})
+db.sport.updateMany({requiredTeams : true}, {$push : [{title :{name : "toto", prenom : "toto", numero : 19}, {name : "tata", prenom : "tutu", numero : 24} }]}}})
+
+
+
+db.users.updateMany({}, {$push : {teams :{ $each : [{titulaire : true}]}}})
